@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Latex Symbol Replacer",
+  "version": "1.0",
+  "description": "Replace U+xxxx unicode or Latex shortcuts while typing on Notion, GitHub, Gmail, and more.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "database/greek.js",
+        "database/superscript.js",
+        "database/subscript.js",
+        "database/punctuation.js",
+        "database/index.js",
+        "registry.js",
+        "ui.js",
+        "replacer.js",
+        "engine.js",
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
